@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.example.ifish.test"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    // json解析依赖
+    compile 'com.fasterxml.jackson.core:jackson-core:2.9.2'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.2'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.2'
+    // 底部导航栏控件
+    compile 'com.ashokvarma.android:bottom-navigation-bar:2.0.3'
+    // okhttp请求依赖
+    compile 'com.squareup.okhttp3:okhttp:3.9.1'
+    // mqtt客户端依赖
+    compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
+    // base64编码依赖
+    compile 'commons-codec:commons-codec:1.11'
+
+    compile 'org.apache.commons:commons-lang3:3.7'
+
+    compile 'cn.yipianfengye.android:zxing-library:2.2'
+}
